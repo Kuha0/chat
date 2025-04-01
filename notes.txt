@@ -1,4 +1,0 @@
-Checar depois:
-
-@Operation - ferramente para poder usar o post
-JSONpropetier - forma de tipar objetos com mais clareza
