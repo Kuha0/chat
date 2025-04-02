@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 31 Agu 2021 pada 18.58
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.3
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -33,13 +24,6 @@ CREATE TABLE `groups` (
   `group_name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data into tabel `groups`
---
-
-INSERT INTO `groups` (`id`, `group_name`) VALUES
-(100, 'group 1'),
-(101, 'group 2');
 
 -- --------------------------------------------------------
 
@@ -51,18 +35,6 @@ CREATE TABLE `group_members` (
   `group_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data into tabel `group_members`
---
-
-INSERT INTO `group_members` (`group_id`, `user_id`) VALUES
-(100, 1),
-(100, 2),
-(100, 3),
-(101, 2),
-(101, 3),
-(101, 4);
 
 -- --------------------------------------------------------
 
@@ -78,14 +50,6 @@ CREATE TABLE `group_messages` (
   `created_datetime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data into tabel `group_messages`
---
-
-INSERT INTO `group_messages` (`id`, `group_id`, `user_id`, `messages`, `created_datetime`) VALUES
-(41, 100, 3, 'Halo kawan kawan', '2021-08-31 23:50:35'),
-(42, 100, 2, 'Halo juga mario', '2021-08-31 23:50:45');
-
 -- --------------------------------------------------------
 
 --
@@ -100,17 +64,6 @@ CREATE TABLE `messages` (
   `created_datetime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `messages`
---
-
-INSERT INTO `messages` (`id`, `message_text`, `message_from`, `message_to`, `created_datetime`) VALUES
-(125, 'Hi Nelson', 1, 2, '2021-08-31 23:50:02'),
-(126, 'Halo Ari, Apa Kabar?', 2, 1, '2021-08-31 23:50:11'),
-(127, 'Baik', 1, 2, '2021-08-31 23:50:14'),
-(128, 'Halo Mario', 2, 3, '2021-08-31 23:50:19'),
-(129, 'Hi Nel', 3, 2, '2021-08-31 23:50:28');
-
 -- --------------------------------------------------------
 
 --
@@ -121,20 +74,6 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data into tabel `users`
---
-
-INSERT INTO `users` (`id`, `name`) VALUES
-(1, 'Ari'),
-(2, 'Nelson'),
-(3, 'Mario'),
-(4, 'Eliezer');
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes of tabel `groups`
